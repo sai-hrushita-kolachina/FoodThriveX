@@ -1,16 +1,21 @@
 {
-  "version": 2,
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://foodthrivex-backend.onrender.com/api/:path*"
+      "source": "/api/(.*)",
+      "destination": "https://foodthrivex-backend.onrender.com/api/$1"
     }
   ],
-  "redirects": [
+  "redirects": [],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
     {
-      "source": "/backend",
-      "destination": "/",
-      "permanent": true
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
     }
   ]
 }
+
